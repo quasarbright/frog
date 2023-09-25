@@ -28,9 +28,9 @@
         (define pre " Using plain `pre` blocks.")
         (match (find-executable-path python-executable)
           [(? path? python)
-           (prn1 (~a "Launching `" python " " pipe.py "` to use Pygments."))
+           (prn1 (~a "Launching `" python " '" pipe.py "' ` to use Pygments."))
            (match (process (~a python
-                               " -u " pipe.py
+                               " -u '" pipe.py "'"
                                (if line-numbers? " --linenos" "")
                                " --cssclass " css-class))
              [(list in out pid err proc)
